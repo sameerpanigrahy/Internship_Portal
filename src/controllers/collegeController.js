@@ -36,9 +36,9 @@ const createCollege = async function (req, res) {
             return res.status(400).send({ status: false, message: "Please provide logoLink of the college" })
         }
         
-      //  if(!validator.isValidLink(data.logoLink)) {
-      //    return res.status(400).send({ status: false, message: "LogoLink is Invalid" })
-      //   }
+       if(!validator.isValidLink(data.logoLink)) {
+         return res.status(400).send({ status: false, message: "LogoLink is Invalid" })
+        }
     //     let duplicatelink= await collegeModel.findOne({logoLink:logoLink})
     //     if (duplicatelink){
     //   return res.status(400).send({ status: false, msg: "logolink  already exist" })
